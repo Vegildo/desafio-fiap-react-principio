@@ -1,0 +1,48 @@
+/* Reset CSS - Removendo margens, paddings e estilos padrões do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Definição de variáveis para facilitar alterações de tema */
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #6200ea;
+  --primary-hover: #3700b3;
+  --card-bg: #1e1e1e;
+}
+
+/* Estilos globais */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 400px;
+}
+
+/* Removendo estilos padrão de listas */
+ul {
+  list-style: none;
+}
+
+/* Removendo estilos padrão de botões */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Inputs com aparência uniforme */
+input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
