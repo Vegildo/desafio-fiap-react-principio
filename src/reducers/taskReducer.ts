@@ -1,50 +1,38 @@
-interface Task {
-  id: number;
-  name: string;
-  completed: boolean;
-}
-
-interface State {
-  tasks: Task[];
-}
+import { Task } from '../types';
 
 interface Action {
-  type: "ADD_TASK" | "REMOVE_TASK" | "TOGGLE_TASK";
+  type: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   payload: any;
 }
 
-function taskReducer(state: State, action: Action): State {
+const taskReducer = (state: { tasks: Task[] }, action: Action) => {
   switch (action.type) {
-    case "ADD_TASK":
+    case 'SET_TASKS':
       return {
         ...state,
-        tasks: [
-          ...state.tasks,
-          {
-            id: state.tasks.length + 1,
-            name: action.payload,
-            completed: false,
-          },
-        ],
+        tasks: action.payload
       };
-    case "REMOVE_TASK":
+    case 'ADD_TASK':
       return {
         ...state,
-        tasks: state.tasks.filter((task) => task.id !== action.payload),
+        tasks: [...state.tasks, action.payload]
       };
-    case "TOGGLE_TASK":
+    case 'REMOVE_TASK':
       return {
         ...state,
-        tasks: state.tasks.map((task) =>
-          task.id === action.payload
-            ? { ...task, completed: !task.completed }
-            : task
-        ),
+        tasks: state.tasks.filter(task => task.id !== action.payload)
+      };
+    case 'TOGGLE_TASK':
+      return {
+        ...state,
+        tasks: state.tasks.map(task =>
+          task.id === action.payload.id ? action.payload : task
+        )
       };
     default:
-      throw new Error("Açao desconhecida");
+      return state;
   }
-}
+};
 
 export default taskReducer;

@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React from "react";
+import { Task } from "../../types";
 import styled from "styled-components";
 
 interface TaskListProps {
-  tasks: { id: number; name: string; completed: boolean }[];
+  tasks: Task[];
   onRemoveTask: (taskId: number) => void;
   onToggleTask: (taskId: number) => void;
 }
@@ -78,9 +80,11 @@ const TaskList: React.FC<TaskListProps> = ({
   onRemoveTask,
   onToggleTask,
 }) => {
-  useEffect(() => {
-    console.log("A lista de tarefas foi atualizada:", tasks);
-  }, [tasks]);
+
+  // useEffect(() => {
+  //   console.log("A lista de tarefas foi atualizada:", tasks);
+  // }, [tasks]);
+
   return (
     <List>
       {tasks.map((task) => (
@@ -91,9 +95,7 @@ const TaskList: React.FC<TaskListProps> = ({
               checked={task.completed}
               onChange={() => onToggleTask(task.id)}
             />
-            <span>
-              {task.id} - {task.name}
-            </span>
+            <span>{task.name}</span>
           </TaskInfo>
           <Button onClick={() => onRemoveTask(task.id)}>Delete</Button>
         </ListItem>
