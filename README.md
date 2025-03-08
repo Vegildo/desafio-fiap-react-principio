@@ -15,8 +15,11 @@ Olá, meu nome é Leonardo Braga. E esse é o desafio para Pós-graduação da F
 2. No terminal do projeto rode `npm install`.
 3. Ainda no mesmo termonal rode `npm run dev`.
 4. Abra o navegador na URL `http://localhost:5173`.
-5. Teste a lista de atividades, adicionando, removendo e marcando como feita.
+5. Em outro terminal também no projeto rode `json-server --watch db.json`.
+7. Teste a lista de atividades, adicionando, removendo e marcando como feita.
 
+>[!NOTE]
+>Se o JSON Server startar em outra porta, diferente da 3000. Mude a `baseURL` no arquivo ´src/api.ts´ para o valor relatado no terminal json-server
 
 
 ### 🔍 Créditos
