@@ -28,4 +28,4 @@ Este app foi desenvolvido, por Leonardo Braga, como parte de um desafio educacio
 
 ---
 
-Lembre-se de conferir o repositório original [aqui](https://github.com/Vegildo/desafio-fiap-react-advanced) e deixar uma ⭐️ se você gostou do projeto!
+Lembre-se de conferir o repositório original [aqui](https://github.com/Vegildo/desafio-fiap-react-principio) e deixar uma ⭐️ se você gostou do projeto!
