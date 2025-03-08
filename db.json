@@ -27,7 +27,8 @@
     {
       "id": "ccdc",
       "name": "Quinta Tarefa",
-      "completed": false
+      "completed": false,
+      "completedAt": null
     },
     {
       "id": "7c15",
